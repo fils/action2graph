@@ -1,7 +1,7 @@
-name: learn-github-actions
+name: jsonld2rdf
 on: [push]
 jobs:
-  check-bats-version:
+  j2q:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -9,4 +9,5 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g jsonld
-      - run: jsonld format -q source/* > sink/test1.rdf
+      - run: which jsonld
+      - run: /usr/bin/jsonld format -q source/* > sink/test1.rdf
