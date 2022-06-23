@@ -20,8 +20,6 @@ jobs:
         run: git add .
       - name: commit changed files
         run: git commit -m "Committing new builds"
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: fetch from master
         run: git fetch origin master
       - name: push code to master
