@@ -12,3 +12,15 @@ jobs:
       - run: npm install -g jsonld-cli
       - run: ./scripttest1.sh
       # - run: jsonld format -q source/* > sink/test1.rdf
+      - name: switching from HTTPS to SSH
+        run: git remote set-url origin ${{ secrets.ssh }}
+      - name: check for changes
+        run: git status
+      - name: stage changed files
+        run: git add .
+      - name: commit changed files
+        run: git commit -m "Committing new builds"
+      - name: fetch from master
+        run: git fetch origin master
+      - name: push code to master
+        run: git push origin HEAD:master
