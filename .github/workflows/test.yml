@@ -14,6 +14,8 @@ jobs:
       # - run: jsonld format -q source/* > sink/test1.rdf
       # - name: switching from HTTPS to SSH
       #   run: git remote set-url origin ${{ secrets.ssh }}
+      - run: git config --global user.email "drfils@gmail.com"
+      - run: git config --global user.name "fils"
       - name: check for changes
         run: git status
       - name: stage changed files
