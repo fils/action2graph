@@ -10,4 +10,5 @@ jobs:
           node-version: '14'
       - run: npm install -g jsonld
       - run: npm install -g jsonld-cli
-      - run: jsonld format -q source/* > sink/test1.rdf
+      - run: ./scripttest1.sh
+      # - run: jsonld format -q source/* > sink/test1.rdf
