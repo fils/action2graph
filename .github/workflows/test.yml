@@ -9,4 +9,4 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g jsonld
-      - run: /usr/local/bin/jsonld format -q source/* > sink/test1.rdf
+      - run: jsonld format -q source/* > sink/test1.rdf
