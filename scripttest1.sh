@@ -2,6 +2,5 @@
 
 for f in ./source/*; do
     base=`basename $f .json` 
-    echo $base
-    jsonld format -q $f >  sink/$base.nq
+    jsonld format -q $f >  ./sink/$base.nq
 done
