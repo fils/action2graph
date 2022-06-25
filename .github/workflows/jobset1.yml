@@ -1,6 +1,16 @@
 name: jsonld2rdf
 on: [push]
 jobs:
+  val1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+      - run: pip install --user rdflib
+      - run: python scripts/orgfiles.py -i source/test1/json -o valreport.rdf
   j2q:
     runs-on: ubuntu-latest
     steps:
@@ -11,6 +21,10 @@ jobs:
       - run: npm install -g jsonld
       - run: npm install -g jsonld-cli
       - run: ./scripttest1.sh
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
       - run: git config --global user.email "drfils@gmail.com"
       - run: git config --global user.name "fils"
       - name: check for changes
