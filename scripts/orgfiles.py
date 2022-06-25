@@ -39,10 +39,10 @@ def main(argv):
   v = Validator(data_graph=dg, shacl_graph=sg,  options={"inference": "none", "advanced": True})  # turn off rdfs inferencing
   conforms, report_graph, report_text = v.run()
   expanded_graph = v.target_graph
+  # print(report_text)
 
-  print(report_text)
-
-  og = bytes(expanded_graph.serialize(format="ttl"), 'utf-8') #.decode("utf-8")
+  # og = bytes(expanded_graph.serialize(format="ttl"), 'utf-8') #.decode("utf-8")
+  og = bytes(report_graph.serialize(format="ttl"), 'utf-8') #.decode("utf-8")
 
   with open(report, 'wb') as f:
           f.write(og)
