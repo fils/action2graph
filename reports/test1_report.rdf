@@ -1,0 +1,14 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix soso: <http://science-on-schema.org/1.2.3/validation/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <https://obis.org/dataset/dcbb8f12-c869-4d31-aa8b-23abb27898ce> ;
+            sh:resultMessage "Expecting SO namespace of <http://schema.org/> not <https://schema.org/>"@en ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:NotConstraintComponent ;
+            sh:sourceShape soso:DatasetNS2Shape ;
+            sh:value <https://obis.org/dataset/dcbb8f12-c869-4d31-aa8b-23abb27898ce> ] .
+
