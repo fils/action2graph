@@ -20,6 +20,6 @@ jobs:
       - name: commit changed files
         run: git commit -m "Committing new files from jsonldConvert run"
       - name: pull from master
-        run: git pull origin master
+        run: git pull --no-rebase origin master
       - name: push code to master
         run: git push origin HEAD:master
