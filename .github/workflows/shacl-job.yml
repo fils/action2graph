@@ -20,7 +20,7 @@ jobs:
         run: git add .
       - name: commit changed files
         run: git commit -m "Committing new files from pySHACL action run"
-      - name: fetch from master
-        run: git fetch origin master
+      - name: pull from master
+        run: git pull origin master
       - name: push code to master
         run: git push origin HEAD:master
